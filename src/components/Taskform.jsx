@@ -13,9 +13,21 @@ function Taskform() {
             : task
         ))
     };
-  return (
-    <div>Taskform</div>
-  )
+
+    const deleteTask = (id) {
+        setTasks(tasks.filter(task => task.id !== id))
+    };
+    return (
+        <div className='task-item'>
+            <h3>{class.title}</h3>
+            <p>{task.description}</p>
+            <p>Status:<strong>{task.status}</strong></p>
+            <button onClick={() => onDelete(task.id)}>Delete</button>
+            <button onClick={() => onToggle(task.id)}>
+                Mark as: {task.status === 'Pending' ? 'Complete' : 'Pending'}
+            </button>
+        </div>
+    )
 }
 
 export default Taskform
