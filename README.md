@@ -1,16 +1,75 @@
-# React + Vite
+# Team Task Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A collaborative task management web application built with React, Tailwind CSS, and Context API. Users can register, log in, create tasks, edit them, mark them as completed, and filter tasks by status. All data is stored in the browser's localStorage.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- User authentication (Register / Login) with user-specific data
+- Full CRUD operations for tasks
+- Task fields: title, description, status (pending/completed), due date
+- Filter tasks by All, Pending, or Completed
+- Protected routes: only authenticated users can access the dashboard
+- Global state management using React Context API
+- Data persistence using localStorage (each user sees only their own tasks)
+- Clean, responsive UI with Tailwind CSS
+- Notifications for user actions
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 18
+- React Router v6
+- Context API (AuthContext, TaskContext)
+- Tailwind CSS
+- lucide-react (icons)
+- react-hot-toast (notifications)
+- Vite
 
-## Expanding the ESLint configuration
+## Project Structure
+team-task-manager/
+├── src/
+│ ├── context/
+│ │ ├── AuthContext.jsx
+│ │ └── TaskContext.jsx
+│ ├── components/
+│ │ ├── Navbar.jsx
+│ │ ├── ProtectedRoute.jsx
+│ │ ├── AuthForm.jsx
+│ │ ├── TaskForm.jsx
+│ │ ├── TaskList.jsx
+│ │ └── TaskItem.jsx
+│ ├── pages/
+│ │ ├── Login.jsx
+│ │ ├── Register.jsx
+│ │ └── Dashboard.jsx
+│ ├── utils/
+│ │ └── localStorage.js
+│ ├── App.jsx
+│ └── main.jsx
+├── index.html
+├── package.json
+├── tailwind.config.js
+├── postcss.config.js
+└── README.md
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+text
+
+## Installation and Setup
+
+1. Clone the repository:
+   ```bash
+   git clone <your-repo-url>
+   cd team-task-manager
+Install dependencies:
+
+bash
+npm install
+Start the development server:
+
+bash
+npm run dev
+Open http://localhost:5173 in your browser.
+
+
+bash
+npm run build
+The output will be in the dist folder. You can deploy it to any static hosting service (Vercel, Netlify, GitHub Pages).
