@@ -24,34 +24,6 @@ A collaborative task management web application built with React, Tailwind CSS, 
 - react-hot-toast (notifications)
 - Vite
 
-## Project Structure
-team-task-manager/
-├── src/
-│ ├── context/
-│ │ ├── AuthContext.jsx
-│ │ └── TaskContext.jsx
-│ ├── components/
-│ │ ├── Navbar.jsx
-│ │ ├── ProtectedRoute.jsx
-│ │ ├── AuthForm.jsx
-│ │ ├── TaskForm.jsx
-│ │ ├── TaskList.jsx
-│ │ └── TaskItem.jsx
-│ ├── pages/
-│ │ ├── Login.jsx
-│ │ ├── Register.jsx
-│ │ └── Dashboard.jsx
-│ ├── utils/
-│ │ └── localStorage.js
-│ ├── App.jsx
-│ └── main.jsx
-├── index.html
-├── package.json
-├── tailwind.config.js
-├── postcss.config.js
-└── README.md
-
-text
 
 ## Installation and Setup
 
