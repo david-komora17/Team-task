@@ -3,16 +3,16 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import AuthForm from "../components/AuthForm";
 
-const Register = () => {
-  const { register } = useAuth();
+const Login = () => {
+  const { login } = useAuth();
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleRegister = async (username, password) => {
+  const handleLogin = async (username, password) => {
     setIsLoading(true);
     try {
-      await register(username, password);
-      navigate("/login");
+      await login(username, password);
+      navigate("/dashboard");
     } catch (err) {
       alert(err.message);
     } finally {
@@ -23,15 +23,11 @@ const Register = () => {
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
       <div className="w-full max-w-md">
-        <AuthForm
-          type="register"
-          onSubmit={handleRegister}
-          isLoading={isLoading}
-        />
+        <AuthForm type="login" onSubmit={handleLogin} isLoading={isLoading} />
         <p className="text-center mt-6 text-gray-600">
-          Already have an account?{" "}
-          <Link to="/login" className="text-indigo-600 hover:underline">
-            Login
+          Don't have an account?{" "}
+          <Link to="/register" className="text-indigo-600 hover:underline">
+            Register
           </Link>
         </p>
       </div>
@@ -39,4 +35,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;
